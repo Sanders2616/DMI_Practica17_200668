@@ -1,7 +1,7 @@
 # DMI_Practica17_200668
 <div style="display: flex; justify-content: space-between;">
     <img align="left" src="https://github.com/Sanders2616/DMI_Practica16_200668/blob/27d5005f48d746c6df7b8ffe5a3d0b4dedbe6e6f/logos/LOGO%20TIC.png?raw=true" alt="Imagen 1" width="200"; />
-    <img align="right" src="logos/LOGO UTXJ 2019.png?raw=true" alt="Imagen 2" width="300" height="80" />
+    <img align="right" src="https://github.com/Sanders2616/DMI_Practica16_200668/blob/27d5005f48d746c6df7b8ffe5a3d0b4dedbe6e6f/logos/LOGO%20UTXJ%202019.png?raw=true" alt="Imagen 2" width="300" height="80" />
 </div><br><br><br><br><br>
 UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ <br><br>
 Materia: Desarrollo Movil Integral <br>
