@@ -6,17 +6,21 @@
 UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ <br><br>
 Materia: Desarrollo Movil Integral <br>
 200668_Sandra Aguilar Santos<br>
-PRÁCTICA 16:Creación del modelo jugadores e implementación de búsqueda de todos los jugadores existentes<br>
-Descripción:La práctica de desarrollo de una API REST en Node.js se focaliza en la eficiencia y versatilidad para la gestión de servicios web. Esta API sigue el principio CRUD (Crear, Leer, Actualizar, Borrar) para manipular recursos de datos, ofreciendo una plataforma flexible para interactuar con la información.
+PRÁCTICA 16:Implementación de la Búsqueda e inserción de los datos de los jugadores<br>
+Descripción:La práctica de desarrollo de una API REST en Node.js se centra en la eficiencia y versatilidad para la gestión de servicios web, incluyendo la implementación de búsqueda e inserción de datos de jugadores. Esta API sigue el principio CRUD (Crear, Leer, Actualizar, Borrar) para manipular recursos de datos, ofreciendo una plataforma flexible para interactuar con la información de los jugadores.
 
-A través de Express.js, se configuran las rutas y controladores correspondientes a cada operación, permitiendo que las solicitudes HTTP se conecten con las funciones específicas de Crear, Leer, Actualizar y Borrar. Las solicitudes POST con JSON se emplean para la creación de datos, mientras que GET, PUT y DELETE se utilizan para la lectura, actualización y eliminación de recursos respectivamente.
+Además de las operaciones estándar CRUD, se ha implementado una búsqueda avanzada para obtener datos específicos de jugadores. Mediante parámetros en las solicitudes GET, se puede filtrar y buscar jugadores por diversos criterios como nombre, posición, puntaje, etc. Esto proporciona una forma eficiente de encontrar información específica dentro del conjunto de datos de jugadores almacenados en la base de datos.
 
-La API se basa en controladores que gestionan las solicitudes, llevando a cabo las operaciones necesarias en una base de datos como MySQL. Esta estructura garantiza la coherencia y la persistencia de los datos, además de permitir un manejo ágil y seguro de la información. Además, se integra un middleware de autenticación y autorización para asegurar la protección de los datos y la identificación de usuarios autorizados.
+La inserción de datos de jugadores se lleva a cabo a través de solicitudes POST, donde se proporciona información detallada sobre un nuevo jugador en formato JSON. Este proceso permite la creación ágil de nuevos registros de jugadores en la base de datos.
 
-La fortaleza de esta API reside en su escalabilidad, su mantenimiento sencillo y su capacidad para interactuar de manera sólida con los datos mediante solicitudes HTTP, proporcionando un entorno robusto para la gestión y manipulación de información. <br>
+La API utiliza controladores especializados para gestionar estas operaciones de búsqueda e inserción de datos de jugadores, lo que garantiza la coherencia y la integridad de la información almacenada. La base de datos, como MySQL, se utiliza como repositorio confiable para almacenar y administrar los datos de los jugadores de manera efectiva.
+
+Para asegurar la seguridad y la protección de los datos, se incorpora un middleware de autenticación y autorización, lo que permite el acceso controlado a las operaciones de búsqueda e inserción según los permisos otorgados a los usuarios.
+
+En resumen, esta API REST en Node.js no solo proporciona operaciones CRUD estándar, sino que también integra funcionalidades avanzadas de búsqueda e inserción de datos de jugadores, ofreciendo así una plataforma sólida y versátil para la gestión completa de la información relacionada con los jugadores en un entorno seguro y eficiente. <br>
 Fecha entrega: 16 de Noviembre del 2023 <br> <br>
 
-# Resultado de la Practica 16
+# Resultado de la Practica 17
 
 <div style="display: flex; justify-content:">
  <img align="left" src="img/1.png?raw=true" alt="Imagen 1" width="800";/>
