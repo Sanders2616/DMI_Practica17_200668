@@ -3,7 +3,7 @@ import playerRoutes from "./routes/playerRoutes.js";
 import dbConnection from "./config/db.js";
 
 const app = express();
-const port = 20007;
+const port = 20066;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
