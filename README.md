@@ -25,10 +25,7 @@ Fecha entrega: 16 de Noviembre del 2023 <br> <br>
 <div style="display: flex; justify-content:">
  <img align="left" src="img/1.png?raw=true" alt="Imagen 1" width="800";/>
  <img align="left" src="img/2.png?raw=true" alt="Imagen 1" width="800";/>
- <img align="left" src="img/3.png?raw=true" alt="Imagen 1" width="800";/>
- <img align="left" src="img/4.png?raw=true" alt="Imagen 1" width="800";/>
- <img align="left" src="img/5.png?raw=true" alt="Imagen 1" width="800";/>
- <img align="left" src="img/6.png?raw=true" alt="Imagen 1" width="800";/>
+
 
 
 
