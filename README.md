@@ -6,7 +6,7 @@
 UNIVERSIDAD TECNOLÓGICA DE XICOTEPEC DE JUÁREZ <br><br>
 Materia: Desarrollo Movil Integral <br>
 200668_Sandra Aguilar Santos<br>
-PRÁCTICA 16:Implementación de la Búsqueda e inserción de los datos de los jugadores<br>
+PRÁCTICA 17:Implementación de la Búsqueda e inserción de los datos de los jugadores<br>
 Descripción:La práctica de desarrollo de una API REST en Node.js se centra en la eficiencia y versatilidad para la gestión de servicios web, incluyendo la implementación de búsqueda e inserción de datos de jugadores. Esta API sigue el principio CRUD (Crear, Leer, Actualizar, Borrar) para manipular recursos de datos, ofreciendo una plataforma flexible para interactuar con la información de los jugadores.
 
 Además de las operaciones estándar CRUD, se ha implementado una búsqueda avanzada para obtener datos específicos de jugadores. Mediante parámetros en las solicitudes GET, se puede filtrar y buscar jugadores por diversos criterios como nombre, posición, puntaje, etc. Esto proporciona una forma eficiente de encontrar información específica dentro del conjunto de datos de jugadores almacenados en la base de datos.
