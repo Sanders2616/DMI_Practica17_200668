@@ -1,21 +1,20 @@
-import Player from "../models/game.js"
+import Jugador from "./models/game.js"
 
-
-const createPlayer = async (req, res) => {
+const createGame = async (req, res) => {
     try {
-        console.log("Se ha solicitado la creación de un nuevo jugador");
-        const { name, email, nickname, birthdate } = req.body;
+        console.log("Se ha solicitado la creación de un nuevo juego");
+        const { title, startGame, endGame, score_st, score_end, duracion } = req.body;
         console.log(req.body);
 
-        const newPlayer = await Player.create(req.body);
+        const newGame = await Jugador.create(req.body);
 
-        if (newPlayer) {
+        if (newGame) {
             res.status(200).json({
-                message: `Se ha creado un nuevo jugador con Nombre: ${name}, Email: ${email}, Apodo: ${nickname}, Fecha de Nacimiento: ${birthdate}`
+                message: `Se ha creado una nueva partida`
             });
         } else {
             res.status(400).json({
-                message: "Hubo un error al intentar crear al jugador. Revisa los parámetros."
+                message: "Hubo un error al intentar crear una partida. Revisa los parámetros."
             });
         }
     } catch (error) {
@@ -27,120 +26,82 @@ const createPlayer = async (req, res) => {
 };
 
 const findAll = async(rq, rs) =>{
-    console.log("Se ha solicitado consulta de todos los jugadores");
-    const allPlayers = await Player.findAll();
-    console.log(allPlayers);
+    console.log("Se ha solicitado consulta de todos las partidas");
+    const allGames = await Jugador.findAll();
+    console.log(allGames);
 
-    if (allPlayers === null) {
+    if (allGames === null) {
         rs.json({
-            messageStatus: `No hay jugadores registrados.`
+            messageStatus: `No hay partidas registrados.`
         });
     }else{
         rs.status(200);
-        rs.json(allPlayers);
+        rs.json(allGames);
     }
 }
 
-const findPlayerByID = async (rq, rs) => {
-    const playerID = rq.params.playerID
-    console.log(`Se ha solicitado buscar al jugador con el id: ${playerID}`)
-    const playerFound = await Player.findByPk(playerID)
-    if(playerFound === null){
+const findGameByID = async (rq, rs) => {
+    const gameID = rq.params.gameID
+    console.log(`Se ha buscado el juego con el id: ${gameID}`)
+    const gameFound = await Jugador.findByPk(gameID)
+    if(gameFound === null){
         rs.status(400)
         rs.json({
-            messageStatus: `El jugador con ID: ${playerID}, no esta esta en la BD`
+            messageStatus: `La partida con ID: ${gameID}, no esta esta en la BD`
         });
-        console.log(`El jugador con ID: ${playerID}, no esta esta en la BD`);
+        console.log(`La partida con ID: ${gameID}, no esta esta en la BD`);
     }else{
         rs.status(200)
-        rs.json(playerFound);
+        rs.json(gameFound);
     }   
 }
 
-const findPlayerByEmail = async (rq, rs) => {
-    const playerEmail = rq.params.playerEmail
-    console.log(`Se ha solicitado buscar al jugador con el correo: ${playerEmail}`)
-    const playerFoundEmail = await Player.findOne({where : {email : playerEmail}})
-
-    if(playerFoundEmail === null){
-        rs.status(400)
-        rs.json({
-            messageStatus: `El jugador con el correo: ${playerEmail}, no esta esta en la BD`
-        });
-        console.log(`El jugador con el correo: ${playerEmail}, no esta esta en la BD`);
-    }else{
-        rs.status(200)
-        rs.json(playerFoundEmail);
-    }   
-}
-
-// const updatePlayer = (rq, rs) => {
-//     const playerID = rq.params.playerID
-//     console.log(`Se ha solicitado una actualización de todos los datos del jugador con el id: ${playerID}`)
-//     rs.status(200)
-//     rs.send(`Se ha solicitado una actualización de todos los datos del jugador con el id: ${playerID}`)
-// }
-
-const updatePlayer = async (req, res) => {
+const updateGame = async (req, res) => {
     try {
-        const playerID = req.params.playerID;
-        console.log(`Se ha solicitado una actualización de todos los datos del jugador con el id: ${playerID}`);
+        const gameID = req.params.gameID;
+        console.log(`Se ha solicitado una actualización de todos los datos del jugador con el id: ${gameID}`);
 
-        const updatedPlayer = await Player.update(req.body, {
+        const updatedGame = await Jugador.update(req.body, {
             where: {
-                id: playerID
+                id: gameID
             }
         });
 
-        if (updatedPlayer[0] === 1) {
+        if (updatedGame[0] === 1) {
             res.status(200).json({
-                message: `Se ha actualizado el jugador con ID: ${playerID}`
+                message: `Se ha actualizado la partida con ID: ${gameID}`
             });
         } else {
             res.status(404).json({
-                message: `El jugador con ID: ${playerID} no fue encontrado en la base de datos.`
+                message: `La partida con ID: ${gameID} no fue encontrado en la base de datos.`
             });
         }
     } catch (error) {
-        console.error("Error al actualizar el jugador:", error);
+        console.error("Error al actualizar la partida:", error);
         res.status(500).json({
-            message: "Hubo un error interno al intentar actualizar el jugador."
+            message: "Hubo un error interno al intentar actualizar la paritida."
         });
     }
 };
 
-const changePlayerPortrait = (rq, rs) => {
-    const playerID = rq.params.playerID
-    console.log(`Se ha solicitado el cambio de foto de perfil del jugador: ${playerID}`)
-    rs.status(200)
-    rs.send(`Se ha solicitado el cambio de foto de perfil del jugador: ${playerID}`)
-} 
-
-// const deteletePlayer = (rq, rs) => {
-//     const playerID = rq.params.playerID
-//     console.log(`Se ha solicitado la eliminacion del jugador: ${playerID}`)
-//     rs.status(200)
-//     rs.send(`Se ha solicitado la eliminacion del jugador: ${playerID}`)
-// } 
-
-const deletePlayer = async (req, res) => {
+const deleteGame = async (req, res) => {
     try {
-        const playerID = req.params.playerID;
-        console.log(`Se ha solicitado la eliminación del jugador con ID: ${playerID}`);
+        const gameID = req.params.gameID;
+        console.log(`Se ha solicitado la eliminación del jugador con ID: ${gameID}`);
 
-        const deletedPlayerCount = await Player.destroy({
+        const deletedGameCount = await Jugador.destroy({
             where: {
-                id: playerID
+                id: gameID
             }
         });
 
         if (deletedPlayerCount === 1) {
             res.status(200).json({
-                message: `Se ha eliminado el jugador con ID: ${playerID}`
+                message: `Se ha eliminado el jugador con ID: ${gameID}`
             });
         } else {
             res.status(404).json({
-                message: `El jugador con ID: ${playerID} no fue encontrado en la base de datos.`
+                message: `El jugador con ID: ${gameID} no fue encontrado en la base de datos.`
             });
         }
     } catch (error) {
@@ -151,4 +112,4 @@ const deletePlayer = async (req, res) => {
     }
 };
 
-export {createPlayer, findPlayerByID, findPlayerByEmail, updatePlayer, changePlayerPortrait, deletePlayer, findAll}
+export {createGame, findGameByID, updateGame, deleteGame, findAll}
