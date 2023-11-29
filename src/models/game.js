@@ -4,16 +4,16 @@ import dbConnection from "../config/db.js";
 const Game = dbConnection.define("tbb_game",
 {
   
-      tittle:{
+   title:{
       type:DataTypes.STRING,
       allowNull:false
    },
-   startSAt:{
+   startAt:{
       type:DataTypes.STRING,
       allowNull:false,
       defaultValue: DataTypes.NOW
    },
-   EndsAt:DataTypes.STRING,
+   endsAT:DataTypes.STRING,
    Score:{
       type:DataTypes.INTEGER,
       allowNull:false,
