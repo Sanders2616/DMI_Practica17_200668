@@ -3,38 +3,27 @@ import dbConnection from "../config/db.js";
 
 const Game = dbConnection.define("tbb_game",
 {
-    title: {
-        type: DataTypes.STRING(255),
-        allowNull: false
-    },
-    startGame: {
-        type: DataTypes.TIME,
-        defaultValue: '00:00:00',
-        allowNull: true
-      },
-      endGame: {
-        type: DataTypes.TIME,
-        defaultValue:'00:02:00',
-        allowNull: true,
-      },
-      score_st: {
-        type: DataTypes.FLOAT,
-        defaultValue:0.0,
-        allowNull: true,
-      },
-      score_end: {
-        type: DataTypes.FLOAT,
-        defaultValue:1200.2,
-        allowNull: true,
-      },
-        duracion:{
-            type:DataTypes.TIME,
-            allowNull:false
-        }
+  
+      tittle:{
+      type:DataTypes.STRING,
+      allowNull:false
+   },
+   startSAt:{
+      type:DataTypes.STRING,
+      allowNull:false,
+      defaultValue: DataTypes.NOW
+   },
+   EndsAt:DataTypes.STRING,
+   Score:{
+      type:DataTypes.INTEGER,
+      allowNull:false,
+      defaultValue:0
+   },
+   duration:DataTypes.TIME
+
+  })
+
+  export default Game;
 
 
 
-}
-)  
-
-export default Game;

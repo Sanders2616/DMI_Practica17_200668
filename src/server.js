@@ -1,7 +1,7 @@
 import express from "express";
 import playerRoutes from "./routes/playerRoutes.js";
 import dbConnection from "./config/db.js";
-import {Player, game} from './models/relationships.js'
+import {Player, Game} from './models/relationships.js'
 
 const app = express();
 const port = 20066;
@@ -19,7 +19,7 @@ try {
     console.log("STATUS -> Intentando conectarse a la base de datos...");
     await dbConnection.authenticate();
     console.log("STATUS -> Conexión a la base de datos exitosa...");
-    // await dbConnection.sync();
+    await dbConnection.sync();
     console.log("STATUS -> Base de Datos lista para realizar operaciones");
 } catch (error) {
     console.error("Han ocurrido errores intentando conectarse a la base de datos");
